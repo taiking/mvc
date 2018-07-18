@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB76BEFD20FF1486007F5C90 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB76BEFC20FF1486007F5C90 /* RealmSwift.framework */; };
+		EB76BEFF20FF1504007F5C90 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB76BEFE20FF1504007F5C90 /* Realm.framework */; };
 		EBE8B60F20F72DCD00987554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8B60E20F72DCD00987554 /* AppDelegate.swift */; };
 		EBE8B61120F72DCD00987554 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8B61020F72DCD00987554 /* ViewController.swift */; };
 		EBE8B61420F72DCD00987554 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE8B61220F72DCD00987554 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB76BEFC20FF1486007F5C90 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		EB76BEFE20FF1504007F5C90 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		EBE8B60B20F72DCD00987554 /* mvc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE8B60E20F72DCD00987554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBE8B61020F72DCD00987554 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB76BEFF20FF1504007F5C90 /* Realm.framework in Frameworks */,
+				EB76BEFD20FF1486007F5C90 /* RealmSwift.framework in Frameworks */,
 				EBE8B62720F72F2C00987554 /* RxCocoa.framework in Frameworks */,
 				EBE8B62820F72F2C00987554 /* Result.framework in Frameworks */,
 				EBE8B62920F72F2C00987554 /* RxSwift.framework in Frameworks */,
@@ -90,6 +96,8 @@
 		EBE8B62020F72F2B00987554 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB76BEFE20FF1504007F5C90 /* Realm.framework */,
+				EB76BEFC20FF1486007F5C90 /* RealmSwift.framework */,
 				EBE8B62520F72F2B00987554 /* APIKit.framework */,
 				EBE8B62220F72F2B00987554 /* Result.framework */,
 				EBE8B62620F72F2B00987554 /* RxBlocking.framework */,
@@ -187,6 +195,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 			);
 			outputPaths = (
 			);

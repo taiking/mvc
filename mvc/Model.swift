@@ -7,23 +7,25 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Model: Codable {
+class Owner: Object, Codable {
+    @objc dynamic var name = ""
     
-    struct Owner: Codable {
-        var name: String
-        enum CodingKeys: String, CodingKey {
-            case name = "login"
-        }
+    enum CodingKeys: String, CodingKey {
+        case name = "login"
     }
+}
+
+class Model: Object, Codable {
+    
+    @objc dynamic var owner: Owner!
+    @objc dynamic var repositoryName = ""
+    @objc dynamic var url = ""
     
     enum CodingKeys: String, CodingKey {
         case owner
         case repositoryName = "name"
         case url = "html_url"
     }
-    
-    var owner: Owner
-    var repositoryName: String
-    var url: String
 }

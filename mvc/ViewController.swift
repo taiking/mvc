@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import APIKit
+import RealmSwift
 
 class ViewController: UIViewController {
     
@@ -19,12 +20,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Session.sendRequest(request: GetRequest()).subscribe(
-            onNext: { [unowned self] models in
-                self.setView(models)
-            }, onError: { error in
-                // Error
-        }).disposed(by: bag)
+        let realm = try! Realm()
+        let requestAndSave = Session.sendRequest(request: GetRequest())
+            .flatMap { models -> Observable<[Model]> in
+                try! realm.write {
+                    realm.delete(realm.objects(Model.self))
+                    realm.add(models)
+                }
+                return Observable.just(models)
+        }
+        
+        Observable.concat(Observable.just(Array(realm.objects(Model.self))), requestAndSave)
+            .subscribe(
+                onNext: { [unowned self] models in
+                    self.setView(models)
+                }, onError: { error in
+                    // Error
+            }).disposed(by: bag)
     }
     
     private func setView(_ models: [Model]) {
